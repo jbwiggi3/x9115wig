@@ -58,8 +58,8 @@ Exercise 3.5 output:
 + - - - - + - - - - + - - - - + - - - - +
 
 ###Exercise 4.2 can be found in flower_drawer.py
-![Flowers](think4\_2.png)
+![Flowers](think4\\_2.png)
 
 ###Exercise 4.3 can be found in pie_drawer.py
 I made the pies have pies inside them for a halloween theme, enjoy
-![Pie](think4\_3.png)
+![Pie](think4\\_3.png)

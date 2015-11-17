@@ -1,26 +1,37 @@
-# Name: Schaffer
-# Objective functions: x^2 ; (x-2)^2
-# n: 1
-# Variable bounds: -10^5 <= x 10^5
-# Comments: convex
+# Name: Osyczka2
 import random
 import math
 
-globalmax = 0
-globalmin = 0
-
-def objfun1(x):
-	return x**2
+def objfun1(a,b,c,d,e,f):
+	x = -1*(25*(a-2)**2+(b-2)**2+(c-1)**2*(d-4)**2+(e-1)**2)
+	return x
 	
-def objfun2(x):
+def objfun2(a,b,c,d,e,f):
+	x = a**2 + b**2 + c**2 + d**2 + e**2 + f**2
 	return (x-2)**2
+	
+def passConstraints(a,b,c,d,e,f):
+	cOne = 0 <= a + b - 2
+	cTwo = 0 <= 6 - a - b
+	cThree = 0 <= 2 - b + a
+	cFour = 0 <= 2 - a + 3*b
+	cFive = 0 <= 4 - (c - 3)**2 - d
+	cSix = 0 <= (e - 3)**3 + f - 4
+	return cOne and cTwo and cThree and cFour and cFive and cSix
+	
+# Come back and make the variable generation work
+# a & b & f 0,10
+# c & e 1,5
+# d 0,6
+def generateVar(x, max, min):
+	max = 10
+	min = 0
+	return x
 
 def energy(f1, f2):
 	#need to run Schaffer 100 times to compute
-	global globalmax
-	global globalmin
-	max = globalmax
-	min = globalmin
+	max = 2001918
+	min = 2
 	return (((f1+f2)-min) / (max - min))
 	
 def p(oldenergy, newenergy, t):
@@ -36,8 +47,8 @@ def printcurrentline(text,k,eb):
 
 def mutate(s):
 	newval = s
-	high = 100000
-	low = -100000
+	high = 1000
+	low = -1000
 	some = (high - low)*.05
 	newval = newval - some + 2*some*random.random()
 	newval = low + (newval - low)%(high - low)
@@ -49,7 +60,7 @@ def sa():
 	kmax = 1000
 	maxlives = 500
 	lives = maxlives
-	currentline = "!"
+	currentline = ""
 	s = 0
 	e = energy(objfun1(s),objfun2(s))
 	sb = s
@@ -79,30 +90,29 @@ def sa():
 			if symbol == "!" or symbol == "+":
 				lives = maxlives
 			if lives < 1:
-				return "Ran out of lives at iteration " + str(k) + "\nBest was: " + str(sb) + "\nEnergy: " + str(eb)
+				return "Ran out of lives"
 			if k > kmax:
-				return "Reached Kmax"+ "\nBest was: " + str(sb) + "\nEnergy: " + str(eb)
+				return "Reached Kmax"
 				
 		currentline += symbol
 			
-def generateGlobals():
-	count = 0
-	s = 0
-	eb = objfun1(s) + objfun2(s)
-	ew = eb
-	for x in range(1000):
-		count += 1
-		s = mutate(s)
-		e = objfun1(s)+objfun2(s)
-		if e > eb:
-			eb = e
-		if e < ew:
-			ew = e
-	global globalmax
-	global globalmin
-	globalmax = eb
-	globalmin = ew
+		
 		
 print "################sa Demo##############"
-generateGlobals()
+'''count = 0
+s = 0
+eb = energy(objfun1(s),objfun2(s))
+ew = eb
+while True:
+	count += 1
+	s = mutate(s)
+	e = energy(objfun1(s),objfun2(s))
+	if e > eb:
+		eb = e
+	if e < ew:
+		ew = e
+	if count == 1000:
+		print eb
+		print ew
+		exit()'''
 print sa()

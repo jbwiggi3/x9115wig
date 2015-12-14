@@ -138,12 +138,13 @@ def maxWalkSat():
 			sb,eb = sn,en
 			s,e = sn,en
 			symbol = "!"
-		elif en < e:
+		elif en > e:
 			s,e = sn,en
 			symbol = "+"		
 		if i % 25 == 0 and i != 0:
 			printcurrentline(currentline,i,eb)
 			currentline = ""
+		e = en
 		currentline += symbol
 		
 	return "Finished MaxWalkSat"+ "\nBest was: " + str(sb) + "\nEnergy: " + str(eb)

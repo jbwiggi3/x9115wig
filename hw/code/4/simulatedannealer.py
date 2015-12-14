@@ -60,17 +60,18 @@ def sa():
 		t = (k/(kmax/1.0))
 		sn = mutate(s)
 		en = energy(objfun1(sn),objfun2(sn))
-		if en > eb:
-			sb,eb = sn,en
-			s,e = sn,en
-			symbol = "!"
-		elif en < e:
-			s,e = sn,en
+		#print str(p(e,en,t)) + " " + str(t)
+		if en < e:
 			symbol = "+"
+			s,e = sn,en
+			if en > eb:
+				sb,eb = sn,en
+				symbol = "!"
 		elif p(e,en,t) < random.random():
+			#print str(p(e,en,t)) + " " + str(random.random()) + " " + str(p(e,en,t) < random.random())
 			#print str(p(e,en,t)) + " " + str(e) + " " + str(en) + " " + str(t)
-			s,e = sn, en
 			symbol = "?"
+			s,e = sn,en
 		if k % 25 == 1:
 			printcurrentline(currentline,k,eb)
 			currentline = ""

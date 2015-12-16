@@ -20,7 +20,7 @@ As the software engineering field has advanced, so have the tools for software d
 This literature review will consider the advancements in automatically handling the bug reports that are generated for code artifacts. This is especially important because of the advancements in software engineering and the emphasis placed on correcting bugs in systems.
 
 ##Related Work
-In today’s computer science company, each system developed could be fostering to the needs of  millions of users. In order to keep up an image, a company needs to release code with as few bugs as possible, so quality assurance in software has become a large focus (Tian, 2005). The internally created bug reports by Quality Assurance staff are heavily scrutinized because it consumes developer resources to correct the bugs. Many companies have policies against submitting duplicate bug reports because more triaging will have to be done by the developer and seen as lazy on the testers’ end (Bettenburg, Premraj, Zimmermann, & Kim, 2008).
+In today’s computer science company, each system developed could be fostering to the needs of  millions of users. In order to keep up an image, a company needs to release code with as few bugs as possible, so quality assurance in software has become a large focus (Tian, 2005). The internally created bug reports by Quality Assurance staff are heavily scrutinized because it consumes developer resources to assign and correct the bugs (Anvik, Hiew, & Murphy, 2006). Many companies have policies against submitting duplicate bug reports because more triaging will have to be done by the developer and seen as lazy on the testers’ end (Bettenburg, Premraj, Zimmermann, & Kim, 2008).
 
 However, people are starting to see duplicate bug reports in a different light. Bettenburg, Premraj, Zimmermann, & Kim (2008) took a hard look at duplicate bug reports and found many redeeming qualities which will be reviewed in the upcoming sections. The general consensus has become that duplicate bug reports improve developer awareness of defect and can aid in solving the defect, but are difficult to manage.
 
@@ -70,13 +70,14 @@ Another important aspect is to consider if the study created treatments which ar
 There are also the generalizability issues that can arise in papers, in which the relationships that the papers displayed are not valid in other situations. It is also important to consider where models might be over-fitting to the domain the authors picked instead of being generalizable to bug reports in general. For instance, in Tian, Lo, and Sun’s (2014) work on predicting the priority of reported bugs, one of the inputs they used for their machine learning algorithm was the amount of bugs that the author of the bug had submitted. This assumption is a bit flawed, in that it assumes that who notices it has some effect on the priority of the bug, as if certain users only notice certain priority levels. This kind of variable being involved would also systematically discriminate against reports filed by casual bug reporters, and that could highly effect performance in some systems.
 
 ##Conclusions
-As software engineering evolve, so must the processes that software engineers implement. In the paper, we have considered the importance of duplicate bugs, clarity of bug reports, reviewed automated process for triaging, prioritizing, and summarizing bugs, and we have considered the short-comings of the literature.
-<High level big accomplishments>
-<Conclude with real world tie in>
+As software engineering evolve, so must the processes that software engineers implement. In the paper, we have considered the importance of duplicate bugs, clarity of bug reports, reviewed automated process for triaging, prioritizing, and summarizing bugs, and we have considered the short-comings of the literature. It is important to consider the variety of ways that authors were able to make significant improvements in systems and imagine ways to combine the qualities of these methods to make the next generation of solution.
+
+As this body of work advances, it will become signficantly easier for end-users to communicate their expectations of the code to the developers. Developers will then be able to automatically grab the higher priority items, already combined with their duplicates, and get straight to work instead of wading through a sea of bug reports and trying to isolate particular types of problems. Ultimately, these advances will reinforce the elements of iterative design and increase the quality of software projects.
 	
 ##Future work
-(Where results can lead you, next steps, other questions)
-While this body of work has taken great steps forward, it is important to consider the shortcomings and future directions. <Roadmap>
+While this body of work has taken great steps forward, it is important to consider the shortcomings and future directions. In this future work section, we will consider what advancements can be made to automatic triaging, summarization, and then deployment of these intelligent bug report infastructures.
+
+It is likely the the next place the community will look for improving the automatic triaging would be in deep learning, since that is a very popular topic at the moment and has been shown to be helpful in semantics. However, I also believe that through combining elements of the items reviewed by the various paper, it is likely that they will be able to produce high quality triaging results that are generalizable across domains. I am particularly interested in the combination of the deep semantic understanding of the topic modeling approach with the low level character analysis because I believe they both address shortcommings in one another.
 
 Once automatic triaging has advanced, it will also be important to revisit the topic of automatic summarization. One short-coming of the Rastkar, Murphy, and Murray (2014) paper was that it was only capable of making extractive summaries, summaries in which the contents of the summary are pulled directly from the parts that are being summarized. However, a potentially much more effective tool would be one that instead created abstractive summaries, summaries in which the contents of the summary are generated based on a semantic representation of the things that are being summarized. As they did with their paper, it will be important to validate the abstractive summary system on software developers to assure that they find it informative and useful in resolving the bugs.
 
@@ -95,5 +96,6 @@ One important step for the future of this work is to make the tools publically a
 10.	Nuseibeh, B. (2001). Weaving together requirements and architectures. Computer, 34(3), 115-119.
 11.	Serrano, N., & Ciordia, I. (2005). Bugzilla, ITracker, and other bug trackers. Software, IEEE, 22(2), 11-13.
 12.	Tian, J. (2005). Software quality engineering: testing, quality assurance, and quantifiable improvement. John Wiley & Sons.
+13.	Anvik, J., Hiew, L., & Murphy, G. C. (2006, May). Who should fix this bug?. In Proceedings of the 28th international conference on Software engineering (pp. 361-370). ACM.
 
 

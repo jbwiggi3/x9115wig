@@ -1,6 +1,5 @@
 # Automatic Bug Handling
-###Joseph B Wiggins
-Final version will be submitted by 11:50
+####Joseph B Wiggins
 
 ##Abstract
 Bug reporting and handling of bug reports has become a critical piece of the software development process as we have moved toward development models with iterative development cycles. However, handling bug reports can be a particularly time intensive task, even before the developer gets to the code correction step. One task in particular that can be time consuming is deciding which bugs are duplicates of one another and usually has to be handled by one of the most experienced of the developers. Some companies have tried to promote policy that would eliminate the submission of duplicate bug reports but research suggests that duplicate bugs can be very helpful to the software development process and should be considered. In response, researchers have begun to experiment by building systems that automate triaging and other bug report related tasks to decrease the load on the developers. This literature review considers this line of work, displaying state-of-art attempts to solve these problems and the results. It also considers the body of work and suggests rooms for growth and improvement in future works.
@@ -13,7 +12,7 @@ Software development models have evolved as software engineering advanced as a f
 
 In these new development models, a large portion of the development effort shifted from being completed before the code was released to after (Larman, & Basili, 2003). This development happens once deployed code starts revealing bugs. These bugs are discovered by end-users and end-users can report bugs to the software engineers via bug reports. However, these reports can become unruly once there is a high number of reports being submitted with a high velocity, which is often the case in today’s systems which cater to many users (Bettenburg, Premraj, Zimmermann, & Kim, 2008).
 
-Each bug report that is submitted needs to be reviewed, combined with other bug reports like it, ranked based on it’s priority, and corrected in the code. The process of reviewing the bugs, especially identifying duplicates, or triaging, uses up a considerable amount of developer time. The more developer time the bug management task takes, the less availability the developers have for new functionalities or projects and can cut into a company's productivity (Sun, Lo, Khoo, & Jiang, 2011).
+Each bug report that is submitted needs to be reviewed, combined with other bug reports like it, ranked based on it’s priority, and corrected in the code. The process of reviewing the bugs, especially identifying duplicates, or triaging, uses up a considerable amount of developer time. There have been large amounts of work done to understand and improve debugging, but the developer cost still remains high (Zeller, 2009).The more developer time the bug management task takes, the less availability the developers have for new functionalities or projects and can cut into a company's productivity (Sun, Lo, Khoo, & Jiang, 2011).
 
 As the software engineering field has advanced, so have the tools for software development. Tools such as Bugzilla, a web interface for reporting bugs, are now publically available and help create some bug infrastructure for users (Serrano, & Ciordia, 2005). In their most basic forms, these systems act as a way to aggregate bug information and are helpful to software developers when addressing the bugs.
 
@@ -83,19 +82,18 @@ Once automatic triaging has advanced, it will also be important to revisit the t
 
 One important step for the future of this work is to make the tools publically available. The papers take advantage of already publically available tools, such as Bugzilla, to collect the bug reports. Automatic triaging could be built into tools like Bugzilla and then the algorithms suggested by these papers could be tested out in the field. Such an implementation would also be very helpful from a machine learning standpoint because it would increase the amount of bugs that the system is run on, and errors can be reported by users and considered when improving the algorithms.
 
-##References (Need 20)
-1.	Sun, C., Lo, D., Khoo, S.C., and Jiang, J. (2011). "Towards More Accurate Retrieval of Duplicate Bug Reports." Proceedings of the 2011 26th IEEE/ACM International Conference on Automated Software Engineering (ASE), 253-262.
-2.	Wang, X., Zhang, L., Xie, T., Anvik, J., & Sun, J. (2008). "An Approach to Detecting Duplicate Bug Reports using Natural Language and Execution Information." Proceedings of the International Conference on Software Engineering, 461-470.
-3.	Sureka, A. & Jalote, P. (2010). "Detecting Duplicate Bug Report Using Character N-Gram-Based Features." Proceedings of the 2010 Asia Pacific Software Engineering Conference, 366-374.
-4.	Bettenburg, N., Just, S., & Schroter, A. (2008). "What Makes a Good Bug Report?" Proceedings of the 16th ACM SIGSOFT International Symposium on Foundations of software engineering, 308-318.
-5.	Bettenburg, N., Premraj, R., Zimmermann, T., & Kim, S. (2008). "Duplicate bug reports considered harmful... really?" In ICSM '08: IEEE international conference on Software maintenance, 337-345.
-6.	Tian, Y., Lo, D., & Sun, C. (2013, September). Drone: Predicting priority of reported bugs by multi-factor analysis. In Software Maintenance (ICSM), 2013 29th IEEE International Conference on (pp. 200-209). IEEE.
-7.	Nguyen, A. T., Nguyen, T. T., Nguyen, T. N., Lo, D., & Sun, C. (2012, September). Duplicate bug report detection with a combination of information retrieval and topic modeling. In Automated Software Engineering (ASE), 2012 Proceedings of the 27th IEEE/ACM International Conference on (pp. 70-79). IEEE.
-8.	Rastkar, S., Murphy, G. C., & Murray, G. (2014). Automatic summarization of bug reports. Software Engineering, IEEE Transactions on, 40(4), 366-380.
-9.	Larman, C., & Basili, V. R. (2003). Iterative and incremental development: A brief history. Computer, (6), 47-56.
-10.	Nuseibeh, B. (2001). Weaving together requirements and architectures. Computer, 34(3), 115-119.
-11.	Serrano, N., & Ciordia, I. (2005). Bugzilla, ITracker, and other bug trackers. Software, IEEE, 22(2), 11-13.
-12.	Tian, J. (2005). Software quality engineering: testing, quality assurance, and quantifiable improvement. John Wiley & Sons.
-13.	Anvik, J., Hiew, L., & Murphy, G. C. (2006, May). Who should fix this bug?. In Proceedings of the 28th international conference on Software engineering (pp. 361-370). ACM.
-
-
+##References
+1.	Anvik, J., Hiew, L., & Murphy, G. C. (2006, May). Who should fix this bug?. In Proceedings of the 28th international conference on Software engineering (pp. 361-370). ACM.
+2.	Bettenburg, N., Just, S., & Schroter, A. (2008). "What Makes a Good Bug Report?" Proceedings of the 16th ACM SIGSOFT International Symposium on Foundations of software engineering, 308-318.
+3.	Bettenburg, N., Premraj, R., Zimmermann, T., & Kim, S. (2008). "Duplicate bug reports considered harmful... really?" In ICSM '08: IEEE international conference on Software maintenance, 337-345.
+4.	Larman, C., & Basili, V. R. (2003). Iterative and incremental development: A brief history. Computer, (6), 47-56.
+5.	Nguyen, A. T., Nguyen, T. T., Nguyen, T. N., Lo, D., & Sun, C. (2012, September). Duplicate bug report detection with a combination of information retrieval and topic modeling. In Automated Software Engineering (ASE), 2012 Proceedings of the 27th IEEE/ACM International Conference on (pp. 70-79). IEEE.
+6.	Nuseibeh, B. (2001). Weaving together requirements and architectures. Computer, 34(3), 115-119.
+7.	Rastkar, S., Murphy, G. C., & Murray, G. (2014). Automatic summarization of bug reports. Software Engineering, IEEE Transactions on, 40(4), 366-380.
+8.	Serrano, N., & Ciordia, I. (2005). Bugzilla, ITracker, and other bug trackers. Software, IEEE, 22(2), 11-13.
+9.	Sun, C., Lo, D., Khoo, S.C., and Jiang, J. (2011). "Towards More Accurate Retrieval of Duplicate Bug Reports." Proceedings of the 2011 26th IEEE/ACM International Conference on Automated Software Engineering (ASE), 253-262.
+10.	Sureka, A. & Jalote, P. (2010). "Detecting Duplicate Bug Report Using Character N-Gram-Based Features." Proceedings of the 2010 Asia Pacific Software Engineering Conference, 366-374.
+11.	Tian, J. (2005). Software quality engineering: testing, quality assurance, and quantifiable improvement. John Wiley & Sons.
+12.	Tian, Y., Lo, D., & Sun, C. (2013, September). Drone: Predicting priority of reported bugs by multi-factor analysis. In Software Maintenance (ICSM), 2013 29th IEEE International Conference on (pp. 200-209). IEEE.
+13.	Wang, X., Zhang, L., Xie, T., Anvik, J., & Sun, J. (2008). "An Approach to Detecting Duplicate Bug Reports using Natural Language and Execution Information." Proceedings of the International Conference on Software Engineering, 461-470.
+14.	Zeller, A. (2009). Why programs fail: a guide to systematic debugging. Elsevier.
